@@ -20,8 +20,8 @@ jobs:
         pip install -r requirements.txt
         dbt deps
         mkdir data
-        curl -o data/incomes.csv https://lydata.ronny-s3.click/incomes.csv
-        curl -o data/expenditures.csv https://lydata.ronny-s3.click/expenditures.csv
+        curl -o data/incomes.csv https://tw-campaign-finance.s3.ap-northeast-1.amazonaws.com/incomes.csv
+        curl -o data/expenditures.csv https://tw-campaign-finance.s3.ap-northeast-1.amazonaws.com/expenditures.csv
         dbt seed
 
     - name: PipeRider Compare
