@@ -23,7 +23,6 @@ jobs:
         curl -o data/incomes.csv https://lydata.ronny-s3.click/incomes.csv
         curl -o data/expenditures.csv https://lydata.ronny-s3.click/expenditures.csv
         dbt seed
-        dbt run
 
     - name: PipeRider Compare
       uses: InfuseAI/piperider-compare-action@v1.2.0-beta.2
