@@ -3,10 +3,10 @@ on:
   pull_request:
     types: [opened, synchronize, reopened]
     branches: ['main']
-    paths:
-      - models/**
-      - seeds/**
-      - tests/**
+    # paths:
+    #   - models/**
+    #   - seeds/**
+    #   - tests/**
 
 jobs:
   piperider-compare:
@@ -23,9 +23,10 @@ jobs:
         curl -o data/incomes.csv https://lydata.ronny-s3.click/incomes.csv
         curl -o data/expenditures.csv https://lydata.ronny-s3.click/expenditures.csv
         dbt seed
+        dbt run
 
     - name: PipeRider Compare
-      uses: InfuseAI/piperider-compare-action@v1
+      uses: InfuseAI/piperider-compare-action@v1.2.0-beta.2
       env:
         PIPERIDER_API_SERVICE: https://staging.cloud.piperider.io
       with:
@@ -33,3 +34,4 @@ jobs:
         cloud_project: ${{ secrets.PIPERIDER_API_PROJECT }}
         upload: true
         share: true
+        piperider_version: 0.29.3-rc.1
