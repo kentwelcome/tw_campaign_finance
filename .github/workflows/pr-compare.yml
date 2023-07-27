@@ -18,6 +18,7 @@ jobs:
 
     - name: setup and prep data
       run: |
+        mkdir -p data
         curl -o data/incomes.csv https://tw-campaign-finance.s3.ap-northeast-1.amazonaws.com/incomes.csv
         curl -o data/expenditures.csv https://tw-campaign-finance.s3.ap-northeast-1.amazonaws.com/expenditures.csv
 
