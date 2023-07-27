@@ -36,4 +36,5 @@ jobs:
         cloud_project: ${{ secrets.PIPERIDER_API_PROJECT }}
         upload: true
         share: true
+        modified: true
         piperider_version: 0.29.3-rc.2
