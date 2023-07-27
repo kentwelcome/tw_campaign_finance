@@ -1,6 +1,6 @@
 sources:
   - name: cy
     tables:
-      - name: transaction
+      - name: transaction_data
         meta:
           external_location: "read_csv_auto(['data/incomes.csv', 'data/expenditures.csv'], union_by_name=True, filename=True)"
